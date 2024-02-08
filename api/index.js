@@ -94,6 +94,7 @@ app.post("/login", async (req, res) => {
 //end point to get user profile
 app.get("/profile/:userId", async (req, res) => {
   try {
+    console.log("tried geting user profile")
 
     const userId = req.params.userId;
     const user = await User.findById(userId);
