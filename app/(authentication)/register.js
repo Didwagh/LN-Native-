@@ -34,8 +34,8 @@ const register = () => {
       }
 
       console.log("just before axios register")
-      // axios.post("http://localhost:8081/register",user).then((response) => {
-      axios.post("http://localhost:3000/register",user).then((response) => {
+      axios.post("http://localhost:8081/register",user).then((response) => {
+      // axios.post("http://localhost:3000/register",user).then((response) => {
           console.log(response);
           Alert.alert("Registration successful","You have been registered successfully");
           console.log("axios after")

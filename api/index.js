@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 const jwt = require("jsonwebtoken");
 
-mongoose.connect("mongodb://127.0.0.1:27017/myapp", {
+mongoose.connect("mongodb+srv://sappy:sappy@cluster0.jpshjbn.mongodb.net/", {
   // useNewUrlParser: true,
   // useUnifiedTopology: true,
 })
@@ -94,7 +94,7 @@ app.post("/login", async (req, res) => {
 //end point to get user profile
 app.get("/profile/:userId", async (req, res) => {
   try {
-    console.log("tried geting user profile")
+    console.log("tried geting user profilef")
 
     const userId = req.params.userId;
     const user = await User.findById(userId);

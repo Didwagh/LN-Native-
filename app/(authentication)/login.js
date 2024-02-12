@@ -20,20 +20,20 @@ const login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
-  useEffect(() => {
-    const checkLoginStatus = async () => {
-        try{
-            const token = await AsyncStorage.getItem("authToken");
-            if(token){
-                router.replace("/(tabs)/home")
-            }
-        } catch(error){
-            console.log(error);
-        }
-    }
+  // useEffect(() => {
+  //   const checkLoginStatus = async () => {
+  //       try{
+  //           const token = await AsyncStorage.getItem("authToken");
+  //           if(token){
+  //               router.replace("/(tabs)/home")
+  //           }
+  //       } catch(error){
+  //           console.log(error);
+  //       }
+  //   }
 
-    checkLoginStatus();
-  },[])
+  //   checkLoginStatus();
+  // },[])
 
   const handleLogin = () => {
     console.log("log in function triggered")
@@ -41,7 +41,7 @@ const login = () => {
           email: email,
           password: password
       }
-      console.log("just before axios")
+      
 
       axios.post("http://localhost:8081/login", user).then((response) => {    
         console.log("axios is triggered")
